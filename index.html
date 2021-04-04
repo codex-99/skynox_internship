@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skynox-Internship</title>
+</head>
+<body>
+    
+    <div class="main">
+        <div class="container">
+            <div class="leftSide">
+                <div class="slideshow">
+                <div class="slides fade">
+                    <img src="./pic1.jpg" alt="slides">
+                </div>
+                <div class="slides fade">
+                    <img src="./pic2.jpg" alt="slides">
+                </div>
+                <div class="slides fade">
+                    <img src="./pic3.jpg" alt="slides">
+                </div>
+                <div class="slides fade">
+                    <img src="./pic4.jpg" alt="slides">
+                </div>
+                <div class="slides fade">
+                    <img src="./pic5.jpg" alt="slides">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <div class="imgSlide">
+                    <img src="./pic1.jpg" alt="slides" class="dot" onclick="currentSlide(1)">
+                    <img src="./pic2.jpg" alt="slides" class="dot" onclick="currentSlide(2)">
+                    <img src="./pic3.jpg" alt="slides" class="dot" onclick="currentSlide(3)">
+                    <img src="./pic4.jpg" alt="slides" class="dot" onclick="currentSlide(4)">
+                    <img src="./pic5.jpg" alt="slides" class="dot" onclick="currentSlide(5)">
+                </div>
+            </div>
+            <div class="rightSide">
+                <h2>Upholstered Sofa</h2>
+                <h4>Kyara Upholstered Standard Bed</br>by Zipcode Design</h4>
+                <p id="info">Anchor your living room in sophisticated style and impeccable</br>comfort with a single addition.
+                Perfectly balancing wood</br>accents with fabric upholstery.</br></br></p>
+                <div class="ratings">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    </br>
+                    <p id="rate">(5.0) </p><p id="rate2"> review based on 250</p></br>
+                    <p id="rate3">Submit review</p>
+                </div>
+                <h3>$567</h3>
+                <div class="delivery">
+                    <img src="https://img.icons8.com/material-outlined/20/999999/clock--v1.png"/>
+                    <p>Dispatched in 7 working days</p></br>
+                    <button class="cartBtn">ADD TO CART</button>
+                    <button class="wishlistBtn">ADD TO WISHLIST</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="block1">
+                <img class="blockInner imgblock" src="https://img.icons8.com/material-outlined/32/000000/coin-wallet.png"/>
+                <div class="blockInner">
+                <h3>Secure Payment</h3>
+                Don't worry, your money is</br>in secure places.
+                </div>
+            </div>
+            <div class="block2">
+                <img class="blockInner imgblock" src="https://img.icons8.com/pastel-glyph/32/000000/truck--v1.png"/>
+                <div class="blockInner">
+                    <h3>Fast & free delivery</h3>
+                    Home delivery $15 for free</br>delivery order over $250.
+                </div>
+            </div>
+            <div class="block3">
+                <img class="blockInner imgblock returnBlock"  src="https://img.icons8.com/material/32/000000/assignment-return.png"/>
+                <div class="blockInner">
+                <h3>Return policy</h3>
+                No hassle return policy.</br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+    showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+    </script>
+</body>
+</html>
